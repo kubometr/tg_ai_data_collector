@@ -1,7 +1,7 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
-from bot.config import BOT_TOKEN
+from config import BOT_TOKEN
 from bot.handlers import handle_document
 import os
 
