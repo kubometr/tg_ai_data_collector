@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
 from config import BOT_TOKEN
-from bot.handlers import handle_document
+from handlers import handle_document
 import os
 
 os.makedirs("storage/uploads", exist_ok=True)
