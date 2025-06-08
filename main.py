@@ -11,11 +11,14 @@ os.makedirs("storage/parsed", exist_ok=True)
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
-@dp.message(content_types=types.ContentType.DOCUMENT)
 async def doc_handler(message: Message):
     await handle_document(message)
 
+def register_handlers(dp: Dispatcher):
+    dp.message.register(doc_handler, types.ContentType.DOCUMENT)
+
 async def main():
+    register_handlers(dp)
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
