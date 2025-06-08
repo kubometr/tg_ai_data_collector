@@ -9,14 +9,14 @@ os.makedirs("storage/uploads", exist_ok=True)
 os.makedirs("storage/parsed", exist_ok=True)
 
 bot = Bot(token=BOT_TOKEN)
-dp = Dispatcher()  # Убираем bot из аргументов
+dp = Dispatcher()
 
-@dp.message(types.ContentType.DOCUMENT)  # новый синтаксис вместо @dp.message_handler
+@dp.message(content_types=types.ContentType.DOCUMENT)
 async def doc_handler(message: Message):
     await handle_document(message)
 
 async def main():
-    await dp.start_polling(bot)  # Передаём bot в start_polling
+    await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())
