@@ -1,6 +1,5 @@
-from parsers.parser_manager import ParserManager
+import os
 
-PARSER_MANAGER = ParserManager()
-
-# Добавь сюда токен своего бота
-BOT_TOKEN = "7916324638:AAEwvNGMv_y4_2__guTBT5MDqt6KJkM2Wu8"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
