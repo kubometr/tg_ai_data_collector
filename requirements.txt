@@ -1,0 +1,6 @@
+aiogram
+python-docx
+PyMuPDF
+chardet
+ebooklib
+beautifulsoup4
