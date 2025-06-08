@@ -1,5 +1,5 @@
 from aiogram.types import Message
-from bot.config import PARSER_MANAGER
+from config import PARSER_MANAGER
 import os
 
 UPLOAD_DIR = "storage/uploads"
