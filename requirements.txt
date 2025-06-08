@@ -4,3 +4,8 @@ PyMuPDF
 chardet
 ebooklib
 beautifulsoup4
+binpan
+aiohttp
+textract
+beautifulsoup4
+chardet
