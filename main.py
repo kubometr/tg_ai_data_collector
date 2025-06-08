@@ -1,5 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
+from aiogram.filters import ContentTypeFilter
 from aiogram.types import Message
 from config import BOT_TOKEN
 from handlers import handle_document
@@ -15,7 +16,7 @@ async def doc_handler(message: Message):
     await handle_document(message)
 
 def register_handlers(dp: Dispatcher):
-    dp.message.register(doc_handler, types.ContentType.DOCUMENT)
+    dp.message.register(doc_handler, ContentTypeFilter(content_types=[types.ContentType.DOCUMENT]))
 
 async def main():
     register_handlers(dp)
