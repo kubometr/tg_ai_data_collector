@@ -10,7 +10,7 @@ async def handle_document(message: Message):
     file_name = document.file_name
 
     file_path = os.path.join(UPLOAD_DIR, file_name)
-    await document.download(destination_file=file_path)
+    await document.download(destination=file_path)
 
     parsed_text = PARSER_MANAGER.parse(file_path)
     if parsed_text:
