@@ -4,6 +4,7 @@ from parsers.pdf_parser import parse_pdf
 from parsers.docx_parser import parse_docx
 from parsers.doc_parser import parse_doc       # добавь импорт
 from parsers.epub_fb2_parser import parse_epub_fb2
+from parsers.rtf_parser import parse_rtf
 
 class ParserManager:
     def parse(self, file_path):
@@ -18,6 +19,8 @@ class ParserManager:
             return parse_doc(file_path)
         elif ext in [".fb2", ".epub"]:
             return parse_epub_fb2(file_path)
+        elif ext == ".rtf":
+            return parse_rtf(file_path)
         else:
             print(f"[ParserManager] Неизвестный формат файла: {file_path} (расширение: {ext})")
             return ""
